@@ -26,13 +26,13 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    session[:counter] = 0
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product)
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_index_url }
+        format.js
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }

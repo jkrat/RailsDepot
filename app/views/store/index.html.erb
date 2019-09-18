@@ -3,6 +3,10 @@
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
+<p>You have visited to store
+  <%= pluralize(@counter, "time") %>
+</p>
+
 
 <ul class="catalog">
   <% cache @products do %>

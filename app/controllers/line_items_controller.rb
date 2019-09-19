@@ -4,13 +4,11 @@ class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
-  # GET /line_items.json
   def index
     @line_items = LineItem.all
   end
 
   # GET /line_items/1
-  # GET /line_items/1.json
   def show
   end
 
@@ -24,7 +22,6 @@ class LineItemsController < ApplicationController
   end
 
   # POST /line_items
-  # POST /line_items.json
   def create
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product)
@@ -42,7 +39,6 @@ class LineItemsController < ApplicationController
   end
 
   # PATCH/PUT /line_items/1
-  # PATCH/PUT /line_items/1.json
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
@@ -56,7 +52,6 @@ class LineItemsController < ApplicationController
   end
 
   # DELETE /line_items/1
-  # DELETE /line_items/1.json
   def destroy
     @line_item.destroy
     respond_to do |format|
